@@ -1,0 +1,13 @@
+name: Check submission for US-RSE'24
+
+on:
+  push:
+
+jobs:
+  check-submission:
+    uses: lbianchi-lbl/notebooks-ci/.github/workflows/check-submission.yml@main
+    with:
+      repository: ${{ github.repository }}
+      ref: ${{ github.sha }}
+      binder-cache-branch: binder-cache
+      build-artifacts: split_comparisons.html
