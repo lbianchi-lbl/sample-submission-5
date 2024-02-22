@@ -1,3 +1,14 @@
+# Check for required libraries
+required_libraries <- c("shiny", "mclust")
+
+missing_libraries <- required_libraries[!sapply(required_libraries, function(lib) requireNamespace(lib, quietly = TRUE))]
+
+if (length(missing_libraries) > 0) {
+  message("The following required libraries are missing: ", paste(missing_libraries, collapse = ", "))
+  q(status = 1)  # Exit with a nonzero status
+}
+
+
 library(shiny)
 library(mclust)
 
