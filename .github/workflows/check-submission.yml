@@ -10,4 +10,3 @@ jobs:
       repository: ${{ github.repository }}
       ref: ${{ github.sha }}
       binder-cache-branch: binder-cache
-      build-artifacts: split_comparisons.html
