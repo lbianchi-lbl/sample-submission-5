@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+time_to_wait="10s"
+expected_exit_code_with_no_errors="124"
+
+timeout --signal SIGINT "$time_to_wait" R -e "shiny::runApp('~/myapp')" ; [ $? -eq "$expected_exit_code_with_no_errors" ]
+
+exec "$@"
